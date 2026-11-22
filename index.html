@@ -1,127 +1,285 @@
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:Arial,sans-serif;
-  background:#f8f8fc;
-  color:#20203a;
-  line-height:1.7
+ z-index: 100;
+  box-shadow: 0 3px 15px #00000008;
 }
-.container{width:90%;max-width:1120px;margin:auto}
-header{
-  background:#fff;
-  position:sticky;top:0;z-index:10;
-  box-shadow:0 2px 15px #00000008
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
-nav{
-  display:flex;justify-content:space-between;
-  align-items:center;padding:20px 0
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--navy);
 }
-.logo{font-size:23px;font-weight:bold;color:#6655d9}
-nav a{
-  text-decoration:none;color:#34344c;
-  margin-left:23px;font-size:14px
+
+.logo span { color: var(--purple); }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
-nav a:hover{color:#6655d9}
-.hero{
-  background:#171a35;color:white;
-  padding:100px 0
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
 }
-.hero-grid{
-  display:grid;grid-template-columns:1.3fr 1fr;
-  gap:60px;align-items:center
+
+nav a:hover { color: var(--purple); }
+
+.hero {
+  background: var(--navy);
+  color: white;
+  padding: 105px 0;
 }
-.tag{color:#b9aeff;font-weight:bold;font-size:13px}
-.hero h1{font-size:54px;line-height:1.15;margin:18px 0}
-.hero h1 span{color:#a99cff}
-.hero p{color:#d0d0e0;margin-bottom:25px}
-.btn{
-  display:inline-block;background:#7563ec;
-  color:white;padding:13px 25px;
-  border-radius:7px;text-decoration:none;
-  font-weight:bold
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 65px;
+  align-items: center;
 }
-.btn:hover{background:#5c4bd0}
-.btn-outline{
-  background:transparent;
-  border:1px solid #aaa1f7;
-  margin-left:10px
+
+.tag {
+  color: #B8ACFF;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
-.profile{
-  background:#34365b;border:1px solid #55577b;
-  padding:20px;border-radius:22px;
-  text-align:center
+
+.hero h1 {
+  font-size: 55px;
+  line-height: 1.2;
+  margin: 18px 0;
 }
-.profile img{
-  width:100%;height:340px;object-fit:cover;
-  border-radius:15px
+
+.hero h1 span { color: #A99CFF; }
+
+.hero h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
 }
-section{padding:85px 0}
-.section-title{text-align:center;margin-bottom:45px}
-.section-title h2{font-size:34px}
-.section-title p{color:#777;margin-top:8px}
-.about{
-  max-width:780px;margin:auto;text-align:center
+
+.hero p {
+  color: #D2D2E1;
+  margin-bottom: 28px;
 }
-.about p{color:#66677b}
-.skills{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:18px
+
+.profile {
+  background: #303353;
+  padding: 13px;
+  border-radius: 22px;
+  border: 1px solid #565779;
 }
-.skill{
-  background:white;padding:24px;
-  border-radius:12px;text-align:center;
-  border:1px solid #eee
+
+.profile img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 15px;
+  display: block;
 }
-.skill h3{color:#6555d9;margin-bottom:7px}
-.skill p{font-size:14px;color:#777}
-.services{
-  background:#f0efff
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  background: var(--purple);
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: bold;
+  transition: .3s;
 }
-.cards{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:22px
+
+.btn:hover {
+  background: #6958DE;
+  transform: translateY(-2px);
 }
-.card{
-  background:white;padding:28px;
-  border-radius:14px;
-  box-shadow:0 5px 20px #171a3509
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #B8ACFF;
+  margin-left: 10px;
 }
-.card .number{color:#7563ec;font-weight:bold;font-size:14px}
-.card h3{margin:12px 0;color:#252544}
-.card p{color:#777;font-size:14px}
-.projects{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:22px
+
+section { padding: 85px 0; }
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
 }
-.project{
-  background:white;border-radius:14px;
-  padding:28px;border:1px solid #eee
+
+.section-heading h2 {
+  font-size: 35px;
+  color: var(--navy);
 }
-.project h3{margin:12px 0}
-.project p{color:#777;font-size:14px}
-.project-label{
-  display:inline-block;background:#eeecff;
-  color:#6555d9;padding:5px 12px;
-  border-radius:20px;font-size:12px
+
+.section-heading p { color: var(--muted); }
+
+.about-content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: var(--muted);
 }
-.contact{
-  background:#171a35;color:white;text-align:center
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
-.contact p{color:#d0d0e0;margin:12px 0 25px}
-footer{
-  background:#101226;color:#bbb;
-  text-align:center;padding:22px;font-size:13px
+
+.skill-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #EEEEF5;
+  transition: .3s;
 }
-@media(max-width:750px){
-  nav{flex-direction:column;gap:15px}
-  nav a{margin:0 7px;font-size:12px}
-  .hero-grid{grid-template-columns:1fr;gap:35px}
-  .hero h1{font-size:39px}
-  .skills,.cards,.projects{grid-template-columns:1fr}
-  section{padding:60px 0}
-  .hero{padding:65px 0}
-  .btn-outline{margin:10px 0 0}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--purple);
+}
+
+.skill-card h3 {
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.services { background: #F0EEFF; }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px #171A3512;
+}
+
+.service-number {
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.service-card h3 {
+  margin: 15px 0 10px;
+  color: var(--navy);
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #EEEEF5;
+}
+
+.project-label {
+  display: inline-block;
+  background: #EEECFF;
+  color: #6655D9;
+  padding: 5px 13px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.project-card h3 {
+  margin: 15px 0 8px;
+  color: var(--navy);
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact {
+  background: var(--navy);
+  text-align: center;
+  color: white;
+}
+
+.contact h2 { font-size: 36px; }
+
+.contact p {
+  color: #D2D2E1;
+  margin: 12px 0 25px;
+}
+
+.contact a { margin: 5px; }
+
+footer {
+  background: #101226;
+  text-align: center;
+  color: #BBBBCC;
+  padding: 25px;
+  font-size: 13px;
+}
+
+@media(max-width: 750px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero h1 { font-size: 39px; }
+
+  .skills-grid,
+  .service-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section { padding: 60px 0; }
+
+  .hero { padding: 65px 0; }
+
+  .btn-outline { margin: 10px 0 0; }
 }
 </style>
 </head>
@@ -131,143 +289,210 @@ footer{
 <header>
 <div class="container">
 <nav>
-<div class="logo">Fahmida Tasnim.</div>
-<div>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
+<div class="logo">Fahmida<span>.</span></div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 </div>
 </header>
 
 <main>
+
 <section class="hero" id="home">
 <div class="container hero-grid">
+
 <div>
-<div class="tag">WELCOME TO MY PORTFOLIO</div>
-<h1>Grow Your Business <span>Online.</span></h1>
-<h2>I'm Fahmida Tasnim</h2>
-<p>Digital Marketing & Social Media Specialist. I help businesses build their online presence through SEO, social media marketing and creative content strategies.</p>
+<div class="tag">DIGITAL MARKETING PORTFOLIO</div>
+
+<h1>Hello, I'm <span>Fahmida Tasnim</span></h1>
+
+<h2>Digital Marketing Specialist</h2>
+
+<p>
+I help businesses grow their online presence through
+SEO, social media marketing and creative digital strategies.
+Let's build a stronger digital presence together.
+</p>
+
 <a href="#projects" class="btn">Explore My Work</a>
-<a href="#contact" class="btn btn-outline">Contact Me</a>
+<a href="#contact" class="btn btn-outline">Hire Me</a>
 </div>
 
 <div class="profile">
-<img src="https://placehold.co/500x550/34365b/ffffff?text=Your+Photo"
-alt="Fahmida Tasnim profile placeholder">
+<img src="assets/images/fahmida.jpg"
+alt="Fahmida Tasnim - Digital Marketing Specialist">
 </div>
+
 </div>
 </section>
 
 <section id="about">
 <div class="container">
-<div class="section-title">
+
+<div class="section-heading">
 <h2>About Me</h2>
 <p>Get to know me</p>
 </div>
-<div class="about">
-<p>Hello! I'm Fahmida Tasnim, a passionate digital marketer interested in SEO, social media marketing and online business growth. I enjoy creating marketing strategies that help businesses connect with their target audience and build a strong digital presence.</p>
+
+<div class="about-content">
+<p>
+I'm Fahmida Tasnim, a passionate digital marketer
+interested in SEO, social media marketing and online
+business growth. I enjoy learning new marketing
+strategies and helping businesses connect with
+their target audiences.
+</p>
 </div>
+
 </div>
 </section>
 
 <section id="skills">
 <div class="container">
-<div class="section-title">
+
+<div class="section-heading">
 <h2>My Expertise</h2>
-<p>Skills that help businesses grow</p>
+<p>My digital marketing skills</p>
 </div>
-<div class="skills">
-<div class="skill">
+
+<div class="skills-grid">
+
+<div class="skill-card">
 <h3>SEO</h3>
 <p>Keyword Research & On-Page SEO</p>
 </div>
-<div class="skill">
-<h3>Social Media</h3>
-<p>Social Media Marketing & Management</p>
+
+<div class="skill-card">
+<h3>Social Media Marketing</h3>
+<p>Social Media Strategy & Management</p>
 </div>
-<div class="skill">
+
+<div class="skill-card">
 <h3>Facebook Marketing</h3>
-<p>Facebook Page & Content Strategy</p>
+<p>Facebook Page & Content Marketing</p>
 </div>
-<div class="skill">
+
+<div class="skill-card">
 <h3>Content Strategy</h3>
 <p>Content Planning & Development</p>
 </div>
-<div class="skill">
+
+<div class="skill-card">
 <h3>WordPress</h3>
 <p>WordPress Website Management</p>
 </div>
-<div class="skill">
-<h3>Digital Strategy</h3>
-<p>Online Brand Growth Planning</p>
+
+<div class="skill-card">
+<h3>Digital Marketing</h3>
+<p>Online Marketing Strategy</p>
 </div>
+
 </div>
 </div>
 </section>
 
 <section class="services" id="services">
 <div class="container">
-<div class="section-title">
+
+<div class="section-heading">
 <h2>My Services</h2>
 <p>How I can help your business</p>
 </div>
-<div class="cards">
-<div class="card">
-<div class="number">01 / SEO</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<div class="service-number">01 / SEO</div>
 <h3>SEO Optimization</h3>
-<p>Keyword research, on-page SEO and website optimization to improve search visibility.</p>
+<p>
+Keyword research, on-page SEO and website
+optimization to improve search visibility.
+</p>
 </div>
-<div class="card">
-<div class="number">02 / SOCIAL MEDIA</div>
+
+<div class="service-card">
+<div class="service-number">02 / SOCIAL MEDIA</div>
 <h3>Social Media Marketing</h3>
-<p>Social media content planning and marketing strategies to grow your audience.</p>
+<p>
+Social media planning and marketing strategies
+to improve brand awareness and engagement.
+</p>
 </div>
-<div class="card">
-<div class="number">03 / CONTENT</div>
+
+<div class="service-card">
+<div class="service-number">03 / CONTENT</div>
 <h3>Content Strategy</h3>
-<p>Creative content ideas and planning to build brand awareness and engagement.</p>
+<p>
+Creative content planning to connect brands
+with their target audiences.
+</p>
 </div>
+
 </div>
 </div>
 </section>
 
 <section id="projects">
 <div class="container">
-<div class="section-title">
+
+<div class="section-heading">
 <h2>My Projects</h2>
-<p>Some of my work and practice projects</p>
+<p>Selected practice projects and case studies</p>
 </div>
-<div class="projects">
-<div class="project">
-<span class="project-label">SEO PROJECT</span>
-<h3>Website SEO Optimization</h3>
-<p>A practice project focused on keyword research, website structure and on-page SEO improvements.</p>
+
+<div class="project-grid">
+
+<div class="project-card">
+<span class="project-label">SEO PRACTICE</span>
+<h3>Website SEO Analysis</h3>
+<p>
+A practice case study focused on keyword research,
+on-page SEO and website improvement opportunities.
+</p>
 </div>
-<div class="project">
+
+<div class="project-card">
 <span class="project-label">SOCIAL MEDIA</span>
-<h3>Social Media Content Strategy</h3>
-<p>A content planning project designed to improve social media engagement and brand awareness.</p>
+<h3>Social Media Content Plan</h3>
+<p>
+A sample content strategy designed to improve
+audience engagement and brand awareness.
+</p>
 </div>
+
 </div>
 </div>
 </section>
 
 <section class="contact" id="contact">
 <div class="container">
+
 <h2>Let's Work Together!</h2>
-<p>Have a project in mind? I'd love to hear from you.</p>
-<a href="mailto:YOUR-EMAIL@example.com" class="btn">Email Me</a>
+
+<p>
+Have a project in mind? Let's discuss how
+digital marketing can help your business.
+</p>
+
+<a href="mailto:fahmidaworkmail@gmail.com" class="btn">
+Email Me
+</a>
+
 </div>
 </section>
+
 </main>
 
 <footer>
 <p>© 2026 Fahmida Tasnim. All Rights Reserved.</p>
+<p>Digital Marketing & Social Media Portfolio</p>
 </footer>
 
 </body>
