@@ -1,194 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fahmida Tasnim – Digital Marketing Specialist</title>
-<meta name="description" content="Fahmida Tasnim helps businesses build a stronger online presence through SEO, social media marketing, and content strategy.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#F6F7FB; --surface:#FFFFFF; --ink:#141833; --muted:#566079; --line:#DDE1EE;
-  --primary:#3446D8; --primary-ink:#FFFFFF; --accent:#0E9F8E; --soft:#E8EBFB;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-  color-scheme:light;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:#f8f8fc;
+  color:#20203a;
+  line-height:1.7
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0E1122; --surface:#171B33; --ink:#EEF0FA; --muted:#A3ABC7; --line:#2A3050;
-    --primary:#8B98FF; --primary-ink:#0E1122; --accent:#3FD1BE; --soft:#1F2547; color-scheme:dark;
-  }
+.container{width:90%;max-width:1120px;margin:auto}
+header{
+  background:#fff;
+  position:sticky;top:0;z-index:10;
+  box-shadow:0 2px 15px #00000008
 }
-:root[data-theme="dark"]{
-  --bg:#0E1122; --surface:#171B33; --ink:#EEF0FA; --muted:#A3ABC7; --line:#2A3050;
-  --primary:#8B98FF; --primary-ink:#0E1122; --accent:#3FD1BE; --soft:#1F2547; color-scheme:dark;
+nav{
+  display:flex;justify-content:space-between;
+  align-items:center;padding:20px 0
 }
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;font-size:17px}
-h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;text-decoration:none;font-size:1.1rem}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.95rem}
-.nav a.l{text-decoration:none;color:var(--muted)}
-.nav a.l:hover{color:var(--ink)}
-@media(max-width:640px){.nav ul{display:none}}
-
-.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--primary);background:var(--primary);color:var(--primary-ink);transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn.ghost:hover{border-color:var(--ink)}
-
-/* hero */
-.hero{padding:72px 0 80px}
-.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
-.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800}
-.role{margin:14px 0 18px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.25rem;color:var(--primary)}
-.hero p.lead{color:var(--muted);max-width:46ch;margin:0 0 28px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.serp{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 18px 40px -24px rgba(20,24,51,.35)}
-.serp .bar{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--muted);font-size:.95rem;margin-bottom:18px}
-.serp .bar svg{flex:none}
-.res{padding:14px;border-radius:12px;margin-bottom:6px}
-.res.top{background:var(--soft);border:1px solid var(--primary)}
-.res small{display:block;color:var(--muted);font-size:.8rem}
-.res b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem;color:var(--primary);margin:2px 0}
-.res span{font-size:.92rem;color:var(--muted)}
-.res.dim{opacity:.55}
-.res.dim b{color:var(--muted);font-size:1rem}
-.tag{display:inline-block;margin-top:8px;font-size:.75rem;font-weight:700;background:var(--accent);color:#fff;padding:2px 10px;border-radius:999px}
-@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:44px}}
-
-section{padding:80px 0}
-section.alt{background:var(--surface);border-block:1px solid var(--line)}
-h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;max-width:20ch}
-.sub{color:var(--muted);max-width:56ch;margin:14px 0 0}
-
-.about .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
-.about p{margin:0 0 16px;color:var(--muted)}
-@media(max-width:820px){.about .wrap{grid-template-columns:1fr;gap:24px}}
-
-.services{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-.svc{padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--bg)}
-.svc h3{font-size:1.3rem;margin-bottom:8px}
-.svc p{margin:0;color:var(--muted)}
-.svc .ic{width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--primary);display:grid;place-items:center;margin-bottom:16px}
-@media(max-width:640px){.services{grid-template-columns:1fr}}
-
-.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;padding:0;list-style:none}
-.skills li{padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:500}
-
-.projects{margin-top:40px;border-top:1px solid var(--line)}
-.proj{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
-.proj h3{font-size:1.4rem}
-.proj p{margin:6px 0 0;color:var(--muted);max-width:60ch}
-.proj .k{font-size:.85rem;font-weight:700;color:var(--accent);white-space:nowrap;padding-top:6px}
-@media(max-width:640px){.proj{grid-template-columns:1fr}}
-
-.cta{text-align:center;padding:96px 0}
-.cta h2{margin:0 auto}
-.cta .sub{margin:16px auto 30px}
-footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-@media (prefers-reduced-motion:no-preference){
-  .serp .res.top{animation:pop .9s .3s both cubic-bezier(.2,.9,.3,1.2)}
-  @keyframes pop{from{transform:translateY(14px) scale(.97);opacity:0}to{transform:none;opacity:1}}
+.logo{font-size:23px;font-weight:bold;color:#6655d9}
+nav a{
+  text-decoration:none;color:#34344c;
+  margin-left:23px;font-size:14px
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+nav a:hover{color:#6655d9}
+.hero{
+  background:#171a35;color:white;
+  padding:100px 0
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.3fr 1fr;
+  gap:60px;align-items:center
+}
+.tag{color:#b9aeff;font-weight:bold;font-size:13px}
+.hero h1{font-size:54px;line-height:1.15;margin:18px 0}
+.hero h1 span{color:#a99cff}
+.hero p{color:#d0d0e0;margin-bottom:25px}
+.btn{
+  display:inline-block;background:#7563ec;
+  color:white;padding:13px 25px;
+  border-radius:7px;text-decoration:none;
+  font-weight:bold
+}
+.btn:hover{background:#5c4bd0}
+.btn-outline{
+  background:transparent;
+  border:1px solid #aaa1f7;
+  margin-left:10px
+}
+.profile{
+  background:#34365b;border:1px solid #55577b;
+  padding:20px;border-radius:22px;
+  text-align:center
+}
+.profile img{
+  width:100%;height:340px;object-fit:cover;
+  border-radius:15px
+}
+section{padding:85px 0}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font-size:34px}
+.section-title p{color:#777;margin-top:8px}
+.about{
+  max-width:780px;margin:auto;text-align:center
+}
+.about p{color:#66677b}
+.skills{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+.skill{
+  background:white;padding:24px;
+  border-radius:12px;text-align:center;
+  border:1px solid #eee
+}
+.skill h3{color:#6555d9;margin-bottom:7px}
+.skill p{font-size:14px;color:#777}
+.services{
+  background:#f0efff
+}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+.card{
+  background:white;padding:28px;
+  border-radius:14px;
+  box-shadow:0 5px 20px #171a3509
+}
+.card .number{color:#7563ec;font-weight:bold;font-size:14px}
+.card h3{margin:12px 0;color:#252544}
+.card p{color:#777;font-size:14px}
+.projects{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:22px
+}
+.project{
+  background:white;border-radius:14px;
+  padding:28px;border:1px solid #eee
+}
+.project h3{margin:12px 0}
+.project p{color:#777;font-size:14px}
+.project-label{
+  display:inline-block;background:#eeecff;
+  color:#6555d9;padding:5px 12px;
+  border-radius:20px;font-size:12px
+}
+.contact{
+  background:#171a35;color:white;text-align:center
+}
+.contact p{color:#d0d0e0;margin:12px 0 25px}
+footer{
+  background:#101226;color:#bbb;
+  text-align:center;padding:22px;font-size:13px
+}
+@media(max-width:750px){
+  nav{flex-direction:column;gap:15px}
+  nav a{margin:0 7px;font-size:12px}
+  .hero-grid{grid-template-columns:1fr;gap:35px}
+  .hero h1{font-size:39px}
+  .skills,.cards,.projects{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .hero{padding:65px 0}
+  .btn-outline{margin:10px 0 0}
+}
 </style>
 </head>
+
 <body>
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#home">Fahmida Tasnim</a>
-    <nav aria-label="Main"><ul>
-      <li><a class="l" href="#about">About</a></li>
-      <li><a class="l" href="#services">Services</a></li>
-      <li><a class="l" href="#projects">Projects</a></li>
-      <li><a class="l" href="#contact">Contact</a></li>
-    </ul></nav>
-  </div>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">Fahmida Tasnim.</div>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
 </header>
 
-<main id="home">
-<div class="hero"><div class="wrap">
-  <div>
-    <h1>Hi, I'm Fahmida Tasnim.</h1>
-    <p class="role">Digital Marketing Specialist</p>
-    <p class="lead">I help businesses build a stronger online presence through SEO, social media marketing, and strategic content planning. My goal is to help brands reach the right audience, improve their online visibility, and grow their digital presence.</p>
-    <div class="actions">
-      <a class="btn" href="#projects">Explore my work</a>
-      <a class="btn ghost" href="#contact">Contact me</a>
-    </div>
-  </div>
-  <div class="serp" aria-hidden="true">
-    <div class="bar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      digital marketing specialist for my brand
-    </div>
-    <div class="res top">
-      <small>Fahmida Tasnim · Portfolio</small>
-      <b>Fahmida Tasnim – Digital Marketing Specialist</b>
-      <span>SEO, social media marketing, and content strategy to grow your online visibility.</span><br>
-      <span class="tag">Top result</span>
-    </div>
-    <div class="res dim"><small>example.com</small><b>Generic marketing services</b><span>We do a bit of everything for everyone.</span></div>
-    <div class="res dim"><small>example.org</small><b>Marketing tips and tricks</b><span>Ten things you should try this week.</span></div>
-  </div>
-</div></div>
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="tag">WELCOME TO MY PORTFOLIO</div>
+<h1>Grow Your Business <span>Online.</span></h1>
+<h2>I'm Fahmida Tasnim</h2>
+<p>Digital Marketing & Social Media Specialist. I help businesses build their online presence through SEO, social media marketing and creative content strategies.</p>
+<a href="#projects" class="btn">Explore My Work</a>
+<a href="#contact" class="btn btn-outline">Contact Me</a>
+</div>
 
-<section id="about" class="alt about"><div class="wrap">
-  <h2>Turning digital ideas into growth opportunities</h2>
-  <div>
-    <p>I'm an aspiring Digital Marketing Specialist passionate about SEO, social media marketing, and online brand growth.</p>
-    <p>I enjoy researching keywords, analyzing websites, developing content strategies, and exploring digital marketing opportunities.</p>
-    <p>I'm continuously learning and building practical projects to improve my skills and deliver meaningful value to businesses.</p>
-  </div>
-</div></section>
+<div class="profile">
+<img src="https://placehold.co/500x550/34365b/ffffff?text=Your+Photo"
+alt="Fahmida Tasnim profile placeholder">
+</div>
+</div>
+</section>
 
-<section id="services"><div class="wrap">
-  <h2>My services</h2>
-  <div class="services">
-    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div><h3>Search Engine Optimization (SEO)</h3><p>Keyword research, on-page SEO, website audits, and content optimization.</p></div>
-    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12Z"/></svg></div><h3>Social Media Marketing</h3><p>Social media strategy, content planning, audience engagement, and page optimization.</p></div>
-    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><h3>YouTube SEO</h3><p>Video keyword research, SEO-friendly titles, descriptions, tags, and channel optimization.</p></div>
-    <div class="svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3>Content Strategy</h3><p>Content research, content calendars, and audience-focused content planning.</p></div>
-  </div>
-</div></section>
+<section id="about">
+<div class="container">
+<div class="section-title">
+<h2>About Me</h2>
+<p>Get to know me</p>
+</div>
+<div class="about">
+<p>Hello! I'm Fahmida Tasnim, a passionate digital marketer interested in SEO, social media marketing and online business growth. I enjoy creating marketing strategies that help businesses connect with their target audience and build a strong digital presence.</p>
+</div>
+</div>
+</section>
 
-<section class="alt"><div class="wrap">
-  <h2>My skills</h2>
-  <ul class="skills">
-    <li>Keyword Research</li><li>On-Page SEO</li><li>Website SEO Audit</li><li>Social Media Strategy</li>
-    <li>Facebook Marketing</li><li>Instagram Marketing</li><li>YouTube SEO</li><li>Content Planning</li>
-  </ul>
-</div></section>
+<section id="skills">
+<div class="container">
+<div class="section-title">
+<h2>My Expertise</h2>
+<p>Skills that help businesses grow</p>
+</div>
+<div class="skills">
+<div class="skill">
+<h3>SEO</h3>
+<p>Keyword Research & On-Page SEO</p>
+</div>
+<div class="skill">
+<h3>Social Media</h3>
+<p>Social Media Marketing & Management</p>
+</div>
+<div class="skill">
+<h3>Facebook Marketing</h3>
+<p>Facebook Page & Content Strategy</p>
+</div>
+<div class="skill">
+<h3>Content Strategy</h3>
+<p>Content Planning & Development</p>
+</div>
+<div class="skill">
+<h3>WordPress</h3>
+<p>WordPress Website Management</p>
+</div>
+<div class="skill">
+<h3>Digital Strategy</h3>
+<p>Online Brand Growth Planning</p>
+</div>
+</div>
+</div>
+</section>
 
-<section id="projects"><div class="wrap">
-  <h2>Featured projects</h2>
-  <p class="sub">Explore my practical digital marketing projects, research, and strategy examples.</p>
-  <div class="projects">
-    <article class="proj"><div><h3>SEO Keyword Research Project</h3><p>Finding the search terms a target audience actually uses, and grouping them by intent.</p></div><span class="k">SEO</span></article>
-    <article class="proj"><div><h3>Website SEO Audit</h3><p>A review of a website's technical health, on-page elements, and content, with prioritized fixes.</p></div><span class="k">SEO</span></article>
-    <article class="proj"><div><h3>Social Media Marketing Strategy</h3><p>A strategy and content plan for growing a brand's presence on Facebook and Instagram.</p></div><span class="k">Social media</span></article>
-    <article class="proj"><div><h3>YouTube SEO Optimization</h3><p>Optimized titles, descriptions, and tags built from video keyword research.</p></div><span class="k">YouTube</span></article>
-    <article class="proj"><div><h3>Digital Marketing Plan</h3><p>A complete plan that connects SEO, social media, and content toward one business goal.</p></div><span class="k">Strategy</span></article>
-  </div>
-</div></section>
+<section class="services" id="services">
+<div class="container">
+<div class="section-title">
+<h2>My Services</h2>
+<p>How I can help your business</p>
+</div>
+<div class="cards">
+<div class="card">
+<div class="number">01 / SEO</div>
+<h3>SEO Optimization</h3>
+<p>Keyword research, on-page SEO and website optimization to improve search visibility.</p>
+</div>
+<div class="card">
+<div class="number">02 / SOCIAL MEDIA</div>
+<h3>Social Media Marketing</h3>
+<p>Social media content planning and marketing strategies to grow your audience.</p>
+</div>
+<div class="card">
+<div class="number">03 / CONTENT</div>
+<h3>Content Strategy</h3>
+<p>Creative content ideas and planning to build brand awareness and engagement.</p>
+</div>
+</div>
+</div>
+</section>
 
-<section id="contact" class="alt cta"><div class="wrap">
-  <h2>Let's work together</h2>
-  <p class="sub">Have a project or looking to improve your online presence? Let's connect and explore how digital marketing can support your business goals.</p>
-  <a class="btn" href="mailto:fahmidaworkmail@gmail.com">Contact me</a>
-</div></section>
+<section id="projects">
+<div class="container">
+<div class="section-title">
+<h2>My Projects</h2>
+<p>Some of my work and practice projects</p>
+</div>
+<div class="projects">
+<div class="project">
+<span class="project-label">SEO PROJECT</span>
+<h3>Website SEO Optimization</h3>
+<p>A practice project focused on keyword research, website structure and on-page SEO improvements.</p>
+</div>
+<div class="project">
+<span class="project-label">SOCIAL MEDIA</span>
+<h3>Social Media Content Strategy</h3>
+<p>A content planning project designed to improve social media engagement and brand awareness.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+<h2>Let's Work Together!</h2>
+<p>Have a project in mind? I'd love to hear from you.</p>
+<a href="mailto:YOUR-EMAIL@example.com" class="btn">Email Me</a>
+</div>
+</section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Fahmida Tasnim</span><span>Digital Marketing Specialist</span></div></footer>
+<footer>
+<p>© 2026 Fahmida Tasnim. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
